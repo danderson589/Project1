@@ -96,19 +96,18 @@ Metricbeats collects different metrics on the machines that are running. It show
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy [.filebeat-config.yml,] file to /etc/ansible/files.
+- Copy [.filebeat-config.yml,]https://github.com/danderson589/turbo-disco/blob/94cdf3094459f17568820ac9c400ceaa92deb48e/Ansible/filebeat-config.yml file to /etc/ansible/files.
 - Update the filebeat-config.yml file to include the correct IP addresses for the ELK VM. 
 - Run the playbook, and navigate to kibana and navigate to add log data, and then to system logs and click DEB once finished scroll to the bottom of the page and click check data.  You can then navigate to verify incoming data by clicking the link to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+You will need to update the the spacific configuration files to tell Ansible which machine or machines to run the playbook on.  You specify which machine is installing the playbook by in the updateing the host to say webservers in the playbook.  In the ELK playbook you would put the host as elk. 
 
-- _Which URL do you navigate to in order to check that the ELK server is running? 
-The URL that you navigate to in order to check that the ELK server is running is http://20.124.15.177:5601/app/kibana.
+The URL that you navigate to in order to check that the ELK server is running is http://<yourelkvmpublicIP> http://20.124.15.177:5601/app/kibana.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+  
+  
 
 The command you will need to run the playbook is
 Ansible-playbook [name of playbook]
