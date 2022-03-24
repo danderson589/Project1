@@ -24,42 +24,40 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-
 The aspect of security that load balancers protect is availability. The advantage of using a jump box is that there is much less risk, because it is a secure computer that can be used as a point of origin for other servers or environments. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
 
-- _TODO: What does Filebeat watch for?_ Filebeat monitors the log files that you specify and collets log events, it then forwards it to Elasticsearch or logstash. 
-- _TODO: What does Metricbeat record?_ Metricbeat helps you monitor your servers by collecting different metrics from your system and what is running on the server. 
+Filebeat monitors the log files that you specify and collets log events, it then forwards it to Elasticsearch or logstash. 
+
+Metricbeat helps you monitor your servers by collecting different metrics from your system and what is running on the server. 
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
-| Web 1    |   DVWA   | 10.0.0.5   | Linux            |
-| Web 2    |  DVWA    | 10.0.0.6   | Linux            |
-| Web 3    |  DVWA    | 10.0.0.8   | Linux            |
-| Elk      |ELK Container| 10.1.0.4| Linux
+| Name     | Function      | IP Address | Operating system |
+|----------|---------------|------------|------------------|
+| Jump Box | Gateway       | 10.0.0.4   | Linux            |
+| Web 1    | DVWA          | 10.0.0.5   | Linux            |
+| Web 2    | DVWA          | 10.0.0.6   | Linux            |
+| Web 3    | DVWA          | 10.0.0.8   | Linux            |
+| Elk      | ELK Container | 10.1.0.4   | Linux            |
+
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _Jump Box____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 73.127.30.244
 
-Machines within the network can only be accessed by _jump box____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_ I used the Jump box the IP address is 20.189.162.105.
+Machines within the network can only be accessed by Jump Box.
+The machine that I allowed to acess my ELK VM was the Jump Box the IP address is 20.189.162.105.
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     	| Publicly Accessible 	| Allowed IP Addresses |
 |----------	|---------------------	|----------------------|
-| Jump Box 	| No                  	| my personal IP       |
+| Jump Box 	| Yes                  	| my personal IP       |
 | Web 1    	| No                  	| 20.189.162.105       |
 | Web 2    	| No                  	| 20.189.162.105       |
 | Web 3    	| No                  	| 20.189.162.105       |
@@ -67,11 +65,10 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_ The main advantage of automating the configuration with ansible is that it helps IAC or Infrastructure as Code.  
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it helps IAC or Infrastructure as Code. 
+- _TODO: What is the main advantage of automating configuration with Ansible?_
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - First you install dockder.io using the apt module. When putting in the task make sure you “update_cache” name “docker.io” and write the “state” as present. While still using the apt module you will also install pip3. For this you will need to “force_apt_get” name “python3-pip” and once again state as “present.” 
 - For the next section you will be using the pip module.  We will be installing docker python module in this step. You will need the Name “docker” and the state as “present.”
 -For the next step you will be using the sysctl module.  In this step we will be seting up the machine to use more memory.  In the Name section you will put “vm.max_map_count” then in the value section “262144” then state “present”.  Then the last part of this task is reload “yes.”
