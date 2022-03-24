@@ -75,8 +75,8 @@ The playbook implements the following tasks:
 -In this section you download and launch a docker elk container.  This will be done in the docker_container module.  In this step you will download the sebp/elk:761 image.  You will also put in the published_ports in this step the ports are 5601, 9200, 5044.  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-Images/part4.png
-
+[.Images/part4.png .]
+https://github.com/danderson589/turbo-disco/blob/49ae89bea7861623712a525108ebc2c5bbfa94fd/Images/part4.png
  
 ### Target Machines & Beats
 
