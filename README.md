@@ -81,12 +81,11 @@ https://github.com/danderson589/turbo-disco/blob/49ae89bea7861623712a525108ebc2c
 ### Target Machines & Beats
 
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
-The IP addresses for the machines I am monitoring are 10.0.0.5, 10.0.0.6, 10.0.0.8.
+ (10.0.0.5), (10.0.0.6), (10.0.0.8).
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
-I was successfully able to install filebeat as well as metricbeat.  
+The two beats that are on the machines are filebeat and metricbeat. 
+filebeat-metricbeat-playbook.yml
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
