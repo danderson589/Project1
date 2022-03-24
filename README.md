@@ -65,8 +65,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it helps IAC or Infrastructure as Code. 
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it helps IAC or Infrastructure as Code. It is also because it limits access to the server because you are having to go through the Jumb Box. It also makes it so that if you have to make 
 
 The playbook implements the following tasks:
 - First you install dockder.io using the apt module. When putting in the task make sure you “update_cache” name “docker.io” and write the “state” as present. While still using the apt module you will also install pip3. For this you will need to “force_apt_get” name “python3-pip” and once again state as “present.” 
@@ -110,6 +109,7 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
  Metricbeat
   [.metricbeat-config.yml.]https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml
 
+  
 The command you will need to run the playbook is
 Ansible-playbook [name of playbook]
 
