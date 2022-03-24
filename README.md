@@ -85,10 +85,9 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 The two beats that are on the machines are filebeat and metricbeat. 
-[.filebeat-metricbeat-playbook.yml
+[.filebeat-metricbeat-playbook.yml.]https://github.com/danderson589/turbo-disco/blob/904abb76be0c7a4686ff9c458cbadb043972bc8b/Ansible/filebeat-metricbeat-playbook.yml
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 Filebeats collects and files log events. It then forwards them to Elasticsearch for indexing.  
 Metricbeats collects different metrics on the machines that are running. It shows different graphs and charts to show activity on the network.
 
@@ -97,8 +96,8 @@ Metricbeats collects different metrics on the machines that are running. It show
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy _all_playbook___ file to _/etc/ansible/roles____.
-- Update the __filebeatconfig_and metricbeat config__ file to include the correct IP addresses for the ELK VM. 
+- Copy [.filebeat-config.yml,] file to /etc/ansible/files.
+- Update the filebeat-config.yml file to include the correct IP addresses for the ELK VM. 
 - Run the playbook, and navigate to kibana and navigate to add log data, and then to system logs and click DEB once finished scroll to the bottom of the page and click check data.  You can then navigate to verify incoming data by clicking the link to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
