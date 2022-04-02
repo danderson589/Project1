@@ -112,4 +112,4 @@ Curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/r
 
 The Command to get into the config files to up date them is.
 Nano /etc/ansible/files/filebeat-config.yml
-Nano /etc/ansible/files/metricbeat-config.yml [metricbeat-config.yml](https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml)
+Nano /etc/ansible/files/metricbeat-config.yml .[metricbeat-config.yml].(https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml)
