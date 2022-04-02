@@ -4,11 +4,11 @@ Boot camp projects.
 
 The files in this repository were used to configure the network depicted below.
 
-[.diagram.]https://github.com/danderson589/turbo-disco/blob/50587e7e097290396de9c9e7fdb43f51157e8409/Diagrams/Project%201%20Diagram.drawio.png
+![immage].(https://github.com/danderson589/turbo-disco/blob/50587e7e097290396de9c9e7fdb43f51157e8409/Diagrams/Project%201%20Diagram.drawio.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-[./etc/ansible/roles/install-elk.yml.]https://github.com/danderson589/turbo-disco/blob/59f18cd8cfa793f26c34ce6f3b882f0319aa7556/Ansible/install-elk.yml
+.[/etc/ansible/roles/install-elk.yml].(https://github.com/danderson589/turbo-disco/blob/59f18cd8cfa793f26c34ce6f3b882f0319aa7556/Ansible/install-elk.yml)
 
 This document contains the following details:
 - Description of the Topologu
@@ -73,8 +73,8 @@ The playbook implements the following tasks:
 -In this section you download and launch a docker elk container.  This will be done in the docker_container module.  In this step you will download the sebp/elk:761 image.  You will also put in the published_ports in this step the ports are 5601, 9200, 5044.  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-[.Images/part4.png .]
-https://github.com/danderson589/turbo-disco/blob/49ae89bea7861623712a525108ebc2c5bbfa94fd/Images/part4.png
+.[Images/part4.png ].
+(https://github.com/danderson589/turbo-disco/blob/49ae89bea7861623712a525108ebc2c5bbfa94fd/Images/part4.png)
  
 ### Target Machines & Beats
 
@@ -83,7 +83,7 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 The two beats that are on the machines are filebeat and metricbeat. 
-[.filebeat-metricbeat-playbook.yml.]https://github.com/danderson589/turbo-disco/blob/904abb76be0c7a4686ff9c458cbadb043972bc8b/Ansible/filebeat-metricbeat-playbook.yml
+.[filebeat-metricbeat-playbook.yml].(https://github.com/danderson589/turbo-disco/blob/904abb76be0c7a4686ff9c458cbadb043972bc8b/Ansible/filebeat-metricbeat-playbook.yml)
 
 These Beats allow us to collect the following information from each machine:
 Filebeats collects and files log events. It then forwards them to Elasticsearch for indexing.  
@@ -94,7 +94,7 @@ Metricbeats collects different metrics on the machines that are running. It show
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy [.filebeat-config.yml,]https://github.com/danderson589/turbo-disco/blob/94cdf3094459f17568820ac9c400ceaa92deb48e/Ansible/filebeat-config.yml file to /etc/ansible/files.
+- Copy .[filebeat-config.yml].(https://github.com/danderson589/turbo-disco/blob/94cdf3094459f17568820ac9c400ceaa92deb48e/Ansible/filebeat-config.yml) file to /etc/ansible/files.
 - Update the filebeat-config.yml file to include the correct IP addresses for the ELK VM. 
 - Run the playbook, and navigate to kibana and navigate to add log data, and then to system logs and click DEB once finished scroll to the bottom of the page and click check data.  You can then navigate to verify incoming data by clicking the link to check that the installation worked as expected.
 
@@ -114,4 +114,4 @@ Curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/r
 
 The Command to get into the config files to up date them is.
 Nano /etc/ansible/files/filebeat-config.yml
-Nano /etc/ansible/files/metricbeat-config.yml[.metricbeat-config.yml.]https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml
+Nano /etc/ansible/files/metricbeat-config.yml.[metricbeat-config.yml].(https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml)
