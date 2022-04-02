@@ -72,8 +72,7 @@ The playbook implements the following tasks:
 -In this section you download and launch a docker elk container.  This will be done in the docker_container module.  In this step you will download the sebp/elk:761 image.  You will also put in the published_ports in this step the ports are 5601, 9200, 5044.  
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-.[Images/part4.png ].
-(https://github.com/danderson589/turbo-disco/blob/49ae89bea7861623712a525108ebc2c5bbfa94fd/Images/part4.png)
+[Images/part4.png ](https://github.com/danderson589/turbo-disco/blob/49ae89bea7861623712a525108ebc2c5bbfa94fd/Images/part4.png)
  
 ### Target Machines & Beats
 
@@ -82,7 +81,7 @@ This ELK server is configured to monitor the following machines:
 
 We have installed the following Beats on these machines:
 The two beats that are on the machines are filebeat and metricbeat. 
-.[filebeat-metricbeat-playbook.yml].(https://github.com/danderson589/turbo-disco/blob/904abb76be0c7a4686ff9c458cbadb043972bc8b/Ansible/filebeat-metricbeat-playbook.yml)
+[filebeat-metricbeat-playbook.yml](https://github.com/danderson589/turbo-disco/blob/904abb76be0c7a4686ff9c458cbadb043972bc8b/Ansible/filebeat-metricbeat-playbook.yml)
 
 These Beats allow us to collect the following information from each machine:
 Filebeats collects and files log events. It then forwards them to Elasticsearch for indexing.  
@@ -93,7 +92,7 @@ Metricbeats collects different metrics on the machines that are running. It show
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy .[filebeat-config.yml].(https://github.com/danderson589/turbo-disco/blob/94cdf3094459f17568820ac9c400ceaa92deb48e/Ansible/filebeat-config.yml) file to /etc/ansible/files.
+- Copy [filebeat-config.yml](https://github.com/danderson589/turbo-disco/blob/94cdf3094459f17568820ac9c400ceaa92deb48e/Ansible/filebeat-config.yml) file to /etc/ansible/files.
 - Update the filebeat-config.yml file to include the correct IP addresses for the ELK VM. 
 - Run the playbook, and navigate to kibana and navigate to add log data, and then to system logs and click DEB once finished scroll to the bottom of the page and click check data.  You can then navigate to verify incoming data by clicking the link to check that the installation worked as expected.
 
@@ -113,4 +112,4 @@ Curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/r
 
 The Command to get into the config files to up date them is.
 Nano /etc/ansible/files/filebeat-config.yml
-Nano /etc/ansible/files/metricbeat-config.yml.[metricbeat-config.yml].(https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml)
+Nano /etc/ansible/files/metricbeat-config.yml [metricbeat-config.yml](https://github.com/danderson589/turbo-disco/blob/cbb10827c06e86e251d4c0bfc883a471f95dbeb8/Ansible/metricbeat-config.yml)
